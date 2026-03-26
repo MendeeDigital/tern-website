@@ -188,33 +188,104 @@ ul { list-style: none; }
 @keyframes scrollPulse { 0%, 100% { opacity: 0.3; } 50% { opacity: 1; } }
 
 /* ============================
-   JOURNEY TIMELINE
+   JOURNEY TIMELINE — warm & friendly
    ============================ */
-.journey { background: var(--light-bg); }
+.journey {
+  background: linear-gradient(180deg, #FFF9E6 0%, var(--white) 100%);
+  position: relative;
+  overflow: hidden;
+}
+.journey::before {
+  content: ''; position: absolute; top: -60px; right: -60px; width: 300px; height: 300px;
+  background: radial-gradient(circle, rgba(255,224,43,0.15) 0%, transparent 70%);
+  border-radius: 50%; pointer-events: none;
+}
 
-.timeline { position: relative; max-width: 700px; margin: 0 auto; }
-.timeline__line {
+.journey__intro { text-align: center; max-width: 640px; margin: 0 auto 3.5rem; }
+.journey__intro .section__title { color: var(--primary); line-height: 1.2; }
+.journey__intro .section__desc { font-size: 1.125rem; line-height: 1.8; color: var(--text-light); }
+
+.badge--warm {
+  background: rgba(255, 188, 125, 0.2); color: #D4792C;
+}
+
+.timeline--warm { position: relative; max-width: 740px; margin: 0 auto; }
+.timeline--warm .timeline__line {
   position: absolute; left: 28px; top: 0; bottom: 0; width: 3px;
-  background: linear-gradient(to bottom, var(--accent), var(--primary));
+  background: linear-gradient(to bottom, #FFBC7D, var(--secondary), var(--accent));
   border-radius: 3px;
 }
-.timeline__step { display: flex; gap: 2rem; margin-bottom: 2rem; position: relative; }
+
+.timeline__step { display: flex; gap: 2rem; margin-bottom: 2.5rem; position: relative; }
 .timeline__step:last-child { margin-bottom: 0; }
-.timeline__marker {
-  width: 56px; height: 56px; border-radius: 50%; background: var(--white);
-  border: 3px solid var(--accent); display: flex; align-items: center; justify-content: center;
-  font-weight: 900; font-size: 1.25rem; color: var(--primary); flex-shrink: 0;
+
+.timeline__marker--warm {
+  width: 56px; height: 56px; border-radius: 50%;
+  background: linear-gradient(135deg, #FFBC7D, var(--secondary));
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.25rem; color: var(--white); flex-shrink: 0;
   z-index: 1; transition: all var(--transition);
+  box-shadow: 0 4px 16px rgba(255, 188, 125, 0.3);
 }
-.timeline__step:hover .timeline__marker { background: var(--accent); color: var(--white); transform: scale(1.1); }
-.timeline__card {
-  background: var(--white); border-radius: var(--radius-lg); padding: 1.75rem 2rem;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.06); flex: 1; transition: all var(--transition);
+.timeline__step:hover .timeline__marker--warm {
+  transform: scale(1.15); box-shadow: 0 6px 24px rgba(255, 188, 125, 0.5);
 }
-.timeline__step:hover .timeline__card { transform: translateX(6px); box-shadow: 0 8px 32px rgba(0,0,0,0.1); }
-.timeline__icon { font-size: 1.5rem; color: var(--accent); margin-bottom: 0.75rem; }
-.timeline__card h3 { font-size: 1.25rem; font-weight: 700; color: var(--primary); margin-bottom: 0.5rem; }
-.timeline__card p { color: var(--text-light); line-height: 1.6; font-size: 0.9375rem; }
+
+.timeline__card--warm {
+  background: var(--white); border-radius: var(--radius-lg); padding: 2rem 2.25rem;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.05); flex: 1; transition: all var(--transition);
+  border-left: 4px solid transparent;
+}
+.timeline__step:hover .timeline__card--warm {
+  transform: translateX(6px); box-shadow: 0 8px 36px rgba(0,0,0,0.08);
+  border-left-color: var(--secondary);
+}
+
+.timeline__label {
+  display: inline-block; font-size: 0.6875rem; font-weight: 700; text-transform: uppercase;
+  letter-spacing: 2px; color: #D4792C; margin-bottom: 0.5rem;
+}
+.timeline__card--warm h3 {
+  font-size: 1.375rem; font-weight: 900; color: var(--primary); margin-bottom: 0.75rem;
+}
+.timeline__card--warm p {
+  color: var(--text-light); line-height: 1.8; font-size: 1rem; margin-bottom: 0;
+}
+
+/* Entrepreneur voice quotes */
+.timeline__voice {
+  display: flex; align-items: flex-start; gap: 0.75rem;
+  margin-top: 1.25rem; padding-top: 1.25rem;
+  border-top: 1px solid var(--divider);
+}
+.timeline__avatar {
+  width: 40px; height: 40px; border-radius: 50%; object-fit: cover;
+  flex-shrink: 0; border: 2px solid var(--secondary);
+}
+.timeline__voice em {
+  font-size: 0.875rem; color: var(--primary); line-height: 1.5;
+  font-style: italic; display: block;
+}
+
+/* Journey CTA */
+.journey__cta { margin-top: 3.5rem; }
+.journey__cta-inner {
+  display: flex; align-items: center; justify-content: space-between; gap: 2rem;
+  background: var(--primary); border-radius: var(--radius-lg); padding: 2.5rem 3rem;
+  color: var(--white);
+}
+.journey__cta-text h3 { font-size: 1.5rem; font-weight: 900; margin-bottom: 0.25rem; color: var(--white); }
+.journey__cta-text p { color: rgba(255,255,255,0.75); font-size: 1rem; }
+
+/* Responsive timeline */
+@media (max-width: 767px) {
+  .timeline--warm .timeline__line { left: 16px; }
+  .timeline__step { gap: 1.25rem; }
+  .timeline__marker--warm { width: 36px; height: 36px; font-size: 0.875rem; }
+  .timeline__card--warm { padding: 1.5rem; }
+  .timeline__card--warm h3 { font-size: 1.125rem; }
+  .journey__cta-inner { flex-direction: column; text-align: center; padding: 2rem 1.5rem; }
+}
 
 /* ============================
    IMPACT — expandable stat cards
