@@ -61,8 +61,8 @@
     <!-- Page Hero -->
     <section class="page-hero">
       <div class="container">
-        <h1 class="page-hero__title fade-up">Contact Us</h1>
-        <p class="page-hero__subtitle fade-up delay-1">We'd love to hear from you</p>
+        <h1 class="page-hero__title fade-up">Say hello.</h1>
+        <p class="page-hero__subtitle fade-up delay-1">Whatever's on your mind, we're here to listen.</p>
       </div>
     </section>
 
@@ -70,24 +70,25 @@
     <section class="section" style="background: var(--light-bg);">
       <div class="container">
         <div class="section-header reveal">
-          <h2 class="section__title">What brings you here?</h2>
-          <p class="section__desc">Choose your path so we can help you faster.</p>
+          <span class="badge badge--warm">We're listening</span>
+          <h2 class="section__title">What brings you here today?</h2>
+          <p class="section__desc">Tap what feels right &mdash; it helps us understand how to help you best.</p>
         </div>
         <div class="card-grid" style="max-width: 900px; margin: 0 auto;">
-          <a href="#contact-form" class="card reveal" onclick="document.getElementById('subject').value='Entrepreneur enquiry'">
-            <div class="card__icon"><i class="fas fa-rocket"></i></div>
-            <h3 class="card__title">I'm an entrepreneur</h3>
-            <p class="card__text">I need business support or want to join a programme.</p>
+          <a href="#contact-form" class="card reveal" onclick="document.getElementById('subject').value='I have a business idea'">
+            <div class="card__icon" style="background: linear-gradient(135deg, #FFBC7D, var(--secondary));"><i class="fas fa-seedling"></i></div>
+            <h3 class="card__title">I have a business idea</h3>
+            <p class="card__text">I'm a refugee and I'd love to explore what's possible.</p>
           </a>
-          <a href="#contact-form" class="card reveal" onclick="document.getElementById('subject').value='Volunteer enquiry'">
-            <div class="card__icon"><i class="fas fa-hand-holding-heart"></i></div>
-            <h3 class="card__title">I want to volunteer</h3>
-            <p class="card__text">I'd like to share my skills and mentor someone.</p>
+          <a href="#contact-form" class="card reveal" onclick="document.getElementById('subject').value='I want to help someone'">
+            <div class="card__icon" style="background: linear-gradient(135deg, #FFBC7D, var(--secondary));"><i class="fas fa-hand-holding-heart"></i></div>
+            <h3 class="card__title">I want to help someone</h3>
+            <p class="card__text">I've got skills and time, and I'd like to make a difference.</p>
           </a>
-          <a href="#contact-form" class="card reveal" onclick="document.getElementById('subject').value='Partnership enquiry'">
-            <div class="card__icon"><i class="fas fa-building"></i></div>
-            <h3 class="card__title">I represent an organisation</h3>
-            <p class="card__text">I want to explore a partnership or sponsorship.</p>
+          <a href="#contact-form" class="card reveal" onclick="document.getElementById('subject').value='Partnership conversation'">
+            <div class="card__icon" style="background: linear-gradient(135deg, #FFBC7D, var(--secondary));"><i class="fas fa-handshake"></i></div>
+            <h3 class="card__title">My organisation wants to help</h3>
+            <p class="card__text">We'd love to explore how we can work together.</p>
           </a>
         </div>
       </div>
@@ -99,7 +100,8 @@
         <div class="contact-grid">
           <!-- Contact Form -->
           <div class="contact-form reveal">
-            <h2 class="section__title">Send us a message</h2>
+            <h2 class="section__title">Drop us a note</h2>
+            <p style="color: var(--text-light); margin-bottom: 1.5rem;">Don't worry about saying it perfectly. Just say it honestly. We read every message.</p>
             <form aria-label="Contact form">
               <div class="form-group">
                 <label for="name">Your Name</label>

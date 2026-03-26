@@ -72,6 +72,10 @@ ul { list-style: none; }
 .btn--large { padding: 1rem 2.5rem; font-size: 1.125rem; }
 .btn--block { width: 100%; }
 
+/* Warm button */
+.btn--warm { background: linear-gradient(135deg, #FFBC7D, var(--secondary)); color: var(--text); }
+.btn--warm:hover { background: linear-gradient(135deg, var(--secondary), #FFBC7D); color: var(--primary-dark); box-shadow: 0 4px 16px rgba(255, 188, 125, 0.4); }
+
 /* Donate pulse */
 .donate-pulse { animation: donateGlow 4s ease-in-out infinite; }
 @keyframes donateGlow {
@@ -139,7 +143,7 @@ ul { list-style: none; }
 .hero__slide.active { opacity: 1; }
 .hero__bg { width: 100%; height: 100%; background-size: cover; background-position: center; animation: heroZoom 20s ease-in-out infinite alternate; }
 @keyframes heroZoom { from { transform: scale(1); } to { transform: scale(1.08); } }
-.hero__overlay { position: absolute; inset: 0; background: linear-gradient(135deg, rgba(1,61,110,0.88) 0%, rgba(2,28,53,0.72) 100%); z-index: 1; }
+.hero__overlay { position: absolute; inset: 0; background: linear-gradient(135deg, rgba(1,61,110,0.82) 0%, rgba(50,30,10,0.65) 100%); z-index: 1; }
 
 .hero__content { position: relative; z-index: 2; max-width: 780px; padding-top: 72px; }
 .hero__eyebrow { font-size: 0.875rem; font-weight: 600; text-transform: uppercase; letter-spacing: 3px; color: var(--accent); margin-bottom: 1rem; }
@@ -374,6 +378,13 @@ ul { list-style: none; }
 .involve-card__perks i { color: var(--accent); font-size: 0.875rem; }
 
 /* ============================
+   SPLIT LAYOUT (About page)
+   ============================ */
+.split { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+.split__media img { border-radius: var(--radius-lg); box-shadow: 0 20px 60px rgba(0,0,0,0.1); }
+.split__content p { color: var(--text-light); margin-bottom: 1.5rem; line-height: 1.8; }
+
+/* ============================
    SPARK PROGRAMME
    ============================ */
 .spark-section { background: var(--light-bg); }
@@ -422,6 +433,14 @@ ul { list-style: none; }
 .newsletter__form input::placeholder { color: rgba(255,255,255,0.5); }
 .newsletter__form input:focus { outline: none; border-color: var(--accent); }
 
+/* Warm newsletter variant */
+.newsletter__inner--warm {
+  background: linear-gradient(135deg, #D4792C 0%, #FFBC7D 100%);
+}
+.newsletter__inner--warm .newsletter__icon { color: var(--white); }
+.newsletter__inner--warm .newsletter__content h2 { color: var(--white); }
+.newsletter__inner--warm .newsletter__content p { color: rgba(255,255,255,0.85); }
+
 /* ============================
    FLOATING CTA
    ============================ */
@@ -438,7 +457,13 @@ ul { list-style: none; }
   background: rgba(1, 61, 110, 0.95); backdrop-filter: blur(12px); border-radius: 60px;
   box-shadow: 0 8px 32px rgba(0,0,0,0.2);
 }
-.floating-cta__text { color: var(--white); font-weight: 600; font-size: 0.9375rem; padding-left: 0.5rem; }
+.floating-cta__text { color: var(--white); font-weight: 600; font-size: 0.9375rem; padding-left: 0.5rem; display: flex; align-items: center; gap: 0.5rem; }
+
+/* Warm floating CTA */
+.floating-cta__inner--warm {
+  background: linear-gradient(135deg, rgba(212, 121, 44, 0.95), rgba(255, 188, 125, 0.95));
+  backdrop-filter: blur(12px);
+}
 
 /* ============================
    FOOTER
@@ -598,6 +623,7 @@ ul { list-style: none; }
   .stats-grid { grid-template-columns: repeat(2, 1fr); }
   .involve-card { grid-template-columns: 1fr; }
   .involve-card--reverse { direction: ltr; }
+  .split { grid-template-columns: 1fr; gap: 2.5rem; }
   .involve-card__image { min-height: 250px; }
   .spark-hero { grid-template-columns: 1fr; }
   .spark-hero__media { min-height: 280px; }
