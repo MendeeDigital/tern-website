@@ -642,6 +642,20 @@ ul {
   color: var(--primary);
 }
 
+.marquee__logo {
+  height: 40px;
+  width: auto;
+  opacity: 0.5;
+  filter: grayscale(100%);
+  transition: all var(--transition);
+  flex-shrink: 0;
+}
+
+.marquee__logo:hover {
+  opacity: 1;
+  filter: grayscale(0%);
+}
+
 @keyframes marquee {
   0% { transform: translateX(0); }
   100% { transform: translateX(-50%); }
