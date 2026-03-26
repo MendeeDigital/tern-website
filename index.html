@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TERN - The Entrepreneurial Refugee Network</title>
+  <meta name="description" content="Enabling refugees to thrive through the power of their own ideas. We help refugees become entrepreneurs, launch businesses and take control of their own futures.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300;400;600;700;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+  <!-- Skip to content -->
+  <a href="#main" class="skip-link">Skip to content</a>
+
+  <!-- Header -->
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a href="/" class="header__logo" aria-label="TERN Home">
+        <svg viewBox="0 0 120 40" fill="currentColor" class="logo-svg">
+          <text x="0" y="32" font-family="Source Sans 3, sans-serif" font-weight="900" font-size="36" letter-spacing="4">TERN</text>
+        </svg>
+      </a>
+
+      <nav class="header__nav" id="mainNav" aria-label="Main navigation">
+        <ul class="nav-list">
+          <li><a href="#entrepreneurs">Entrepreneurs</a></li>
+          <li><a href="#supporters">Supporters</a></li>
+          <li><a href="#partners">Partners</a></li>
+          <li><a href="about.html">About us</a></li>
+          <li><a href="contact.html">Contact us</a></li>
+        </ul>
+      </nav>
+
+      <div class="header__actions">
+        <a href="#spark" class="btn btn--small btn--outline">Spark</a>
+        <a href="#advice" class="btn btn--small btn--accent">Get advice</a>
+        <a href="#donate" class="btn btn--small btn--yellow">Donate</a>
+      </div>
+
+      <button class="header__burger" id="burgerBtn" aria-label="Toggle menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+
+    <!-- Mobile menu -->
+    <div class="mobile-menu" id="mobileMenu">
+      <ul class="mobile-menu__list">
+        <li><a href="#entrepreneurs">Entrepreneurs</a></li>
+        <li><a href="#supporters">Supporters</a></li>
+        <li><a href="#partners">Partners</a></li>
+        <li><a href="about.html">About us</a></li>
+        <li><a href="contact.html">Contact us</a></li>
+      </ul>
+      <div class="mobile-menu__actions">
+        <a href="#spark" class="btn btn--accent btn--block">Spark</a>
+        <a href="#advice" class="btn btn--accent btn--block">Get advice</a>
+        <a href="#donate" class="btn btn--yellow btn--block">Donate</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+      <div class="hero__slides">
+        <div class="hero__slide active" data-slide="0">
+          <div class="hero__bg" style="background-image: url('https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=1600&q=80')"></div>
+        </div>
+        <div class="hero__slide" data-slide="1">
+          <div class="hero__bg" style="background-image: url('https://images.unsplash.com/photo-1531545514256-b1400bc00f31?w=1600&q=80')"></div>
+        </div>
+        <div class="hero__slide" data-slide="2">
+          <div class="hero__bg" style="background-image: url('https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=1600&q=80')"></div>
+        </div>
+      </div>
+      <div class="hero__overlay"></div>
+      <div class="hero__content container">
+        <h1 class="hero__title fade-up">Are you a refugee looking for business support in the UK?</h1>
+        <p class="hero__text fade-up delay-1">Welcome to The Entrepreneurial Refugee Network (TERN). We help refugees become entrepreneurs, launch businesses and take control of their own futures, and have supported over 750 founders since 2016.</p>
+        <a href="#entrepreneurs" class="btn btn--accent btn--large fade-up delay-2">Get Support</a>
+      </div>
+      <div class="hero__social">
+        <a href="https://www.linkedin.com/company/wearetern/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://www.instagram.com/we_are_tern/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      </div>
+      <div class="hero__indicators">
+        <button class="hero__dot active" data-slide="0" aria-label="Slide 1"></button>
+        <button class="hero__dot" data-slide="1" aria-label="Slide 2"></button>
+        <button class="hero__dot" data-slide="2" aria-label="Slide 3"></button>
+      </div>
+    </section>
+
+    <!-- Get Involved Cards -->
+    <section class="involved section" id="supporters">
+      <div class="container">
+        <h2 class="section__title reveal">Get Involved</h2>
+        <div class="card-grid">
+          <article class="card reveal">
+            <div class="card__icon">
+              <i class="fas fa-hands-helping"></i>
+            </div>
+            <h3 class="card__title">Volunteer with TERN</h3>
+            <p class="card__text">We connect industry professionals with refugee entrepreneurs seeking advice and support.</p>
+            <a href="#supporters" class="card__link">Learn more <i class="fas fa-arrow-right"></i></a>
+          </article>
+          <article class="card reveal" id="partners">
+            <div class="card__icon">
+              <i class="fas fa-handshake"></i>
+            </div>
+            <h3 class="card__title">Partner with TERN</h3>
+            <p class="card__text">Develop your organisation's support for refugee entrepreneurs, or collaborate on one of our programmes.</p>
+            <a href="#partners" class="card__link">Learn more <i class="fas fa-arrow-right"></i></a>
+          </article>
+          <article class="card reveal">
+            <div class="card__icon">
+              <i class="fas fa-calendar-alt"></i>
+            </div>
+            <h3 class="card__title">Join TERN events</h3>
+            <p class="card__text">Support refugee entrepreneurs at one of our in-person events &mdash; hosted year-round across London.</p>
+            <a href="#events" class="card__link">Learn more <i class="fas fa-arrow-right"></i></a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Impact Stats -->
+    <section class="impact section" id="impact">
+      <div class="container">
+        <h2 class="section__title section__title--light reveal">Our Impact So Far</h2>
+        <div class="stats-grid">
+          <div class="stat reveal">
+            <span class="stat__number" data-target="872">0</span>
+            <span class="stat__label">Entrepreneurs supported</span>
+          </div>
+          <div class="stat reveal">
+            <span class="stat__number" data-target="160">0</span>
+            <span class="stat__label">Businesses started</span>
+          </div>
+          <div class="stat reveal">
+            <span class="stat__number" data-target="11">0</span>
+            <span class="stat__label">Cities reached</span>
+          </div>
+          <div class="stat reveal">
+            <span class="stat__number" data-prefix="£" data-target="995" data-suffix="K">0</span>
+            <span class="stat__label">Finance facilitated</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- News Marquee -->
+    <section class="news-marquee section--compact">
+      <div class="container">
+        <h2 class="section__subtitle reveal">TERN in the News</h2>
+      </div>
+      <div class="marquee">
+        <div class="marquee__track">
+          <span class="marquee__item">Creative Boom</span>
+          <span class="marquee__item">The Guardian</span>
+          <span class="marquee__item">Virgin</span>
+          <span class="marquee__item">BBC News</span>
+          <span class="marquee__item">Daily Mail</span>
+          <span class="marquee__item">Positive News</span>
+          <span class="marquee__item">Creative Boom</span>
+          <span class="marquee__item">The Guardian</span>
+          <span class="marquee__item">Virgin</span>
+          <span class="marquee__item">BBC News</span>
+          <span class="marquee__item">Daily Mail</span>
+          <span class="marquee__item">Positive News</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Entrepreneurs Section -->
+    <section class="entrepreneurs section" id="entrepreneurs">
+      <div class="container">
+        <div class="split">
+          <div class="split__media reveal">
+            <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&q=80" alt="Entrepreneurs collaborating" loading="lazy">
+          </div>
+          <div class="split__content reveal">
+            <h2 class="section__title">For Entrepreneurs</h2>
+            <p>Whether you're just starting out or looking to grow your business, TERN provides the resources, mentorship, and community you need to succeed.</p>
+            <ul class="check-list">
+              <li>One-to-one business mentoring</li>
+              <li>Structured programmes and workshops</li>
+              <li>Access to funding and finance</li>
+              <li>A community of fellow entrepreneurs</li>
+            </ul>
+            <a href="#" class="btn btn--accent">Explore our programmes</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Newsletter CTA -->
+    <section class="newsletter section">
+      <div class="container">
+        <div class="newsletter__inner reveal">
+          <div class="newsletter__content">
+            <h2>Be the first to hear news from our community!</h2>
+            <p>Stay updated with stories, events, and opportunities from the TERN network.</p>
+          </div>
+          <form class="newsletter__form" aria-label="Newsletter signup">
+            <input type="email" placeholder="Your email address" required aria-label="Email address">
+            <button type="submit" class="btn btn--accent">Subscribe</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Spark Section -->
+    <section class="spark section" id="spark">
+      <div class="container">
+        <div class="split split--reverse">
+          <div class="split__media reveal">
+            <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&q=80" alt="TERN Spark programme" loading="lazy">
+          </div>
+          <div class="split__content reveal">
+            <span class="badge">Programme</span>
+            <h2 class="section__title">Spark</h2>
+            <p>Our flagship pre-incubation programme designed to help refugees explore and develop their business ideas in a supportive, structured environment.</p>
+            <a href="#" class="btn btn--accent">Apply now</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__about">
+          <div class="footer__logo">
+            <svg viewBox="0 0 120 40" fill="currentColor" class="logo-svg">
+              <text x="0" y="32" font-family="Source Sans 3, sans-serif" font-weight="900" font-size="36" letter-spacing="4">TERN</text>
+            </svg>
+          </div>
+          <p>The Entrepreneurial Refugee Network C.I.C. is a social enterprise enabling refugees to thrive through the power of their own ideas.</p>
+          <div class="footer__social">
+            <a href="https://www.instagram.com/we_are_tern/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.linkedin.com/company/wearetern/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://twitter.com/TERNrefugee" target="_blank" rel="noopener" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
+            <a href="https://www.facebook.com/refugeeentrepreneurship/" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.youtube.com/channel/UCGvGBwl0jSw39LJ_MK8fssQ" target="_blank" rel="noopener" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+        <div class="footer__links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="#entrepreneurs">For entrepreneurs</a></li>
+            <li><a href="#supporters">For volunteers</a></li>
+            <li><a href="#partners">For partners</a></li>
+            <li><a href="#events">TERN Events</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="#">Terms & Conditions</a></li>
+            <li><a href="#">Privacy notice</a></li>
+          </ul>
+        </div>
+        <div class="footer__newsletter">
+          <h4>Stay Connected</h4>
+          <p>Subscribe to the TERN Newsletter for updates, stories, and opportunities.</p>
+          <form class="footer__form" aria-label="Footer newsletter signup">
+            <input type="email" placeholder="Email address" required aria-label="Email address">
+            <button type="submit" class="btn btn--accent btn--block">Subscribe</button>
+          </form>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>&copy; 2026 The Entrepreneurial Refugee Network C.I.C. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

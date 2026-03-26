@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us - TERN</title>
+  <meta name="description" content="Get in touch with The Entrepreneurial Refugee Network. We'd love to hear from you.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300;400;600;700;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+  <a href="#main" class="skip-link">Skip to content</a>
+
+  <!-- Header -->
+  <header class="header scrolled" id="header">
+    <div class="container header__inner">
+      <a href="/" class="header__logo" aria-label="TERN Home">
+        <svg viewBox="0 0 120 40" fill="currentColor" class="logo-svg">
+          <text x="0" y="32" font-family="Source Sans 3, sans-serif" font-weight="900" font-size="36" letter-spacing="4">TERN</text>
+        </svg>
+      </a>
+      <nav class="header__nav" id="mainNav" aria-label="Main navigation">
+        <ul class="nav-list">
+          <li><a href="index.html#entrepreneurs">Entrepreneurs</a></li>
+          <li><a href="index.html#supporters">Supporters</a></li>
+          <li><a href="index.html#partners">Partners</a></li>
+          <li><a href="about.html">About us</a></li>
+          <li><a href="contact.html" style="color: var(--accent)">Contact us</a></li>
+        </ul>
+      </nav>
+      <div class="header__actions">
+        <a href="index.html#spark" class="btn btn--small btn--outline">Spark</a>
+        <a href="#" class="btn btn--small btn--accent">Get advice</a>
+        <a href="#" class="btn btn--small btn--yellow">Donate</a>
+      </div>
+      <button class="header__burger" id="burgerBtn" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <ul class="mobile-menu__list">
+        <li><a href="index.html#entrepreneurs">Entrepreneurs</a></li>
+        <li><a href="index.html#supporters">Supporters</a></li>
+        <li><a href="index.html#partners">Partners</a></li>
+        <li><a href="about.html">About us</a></li>
+        <li><a href="contact.html">Contact us</a></li>
+      </ul>
+      <div class="mobile-menu__actions">
+        <a href="#" class="btn btn--accent btn--block">Get advice</a>
+        <a href="#" class="btn btn--yellow btn--block">Donate</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+      <div class="container">
+        <h1 class="page-hero__title fade-up">Contact Us</h1>
+        <p class="page-hero__subtitle fade-up delay-1">We'd love to hear from you</p>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section">
+      <div class="container">
+        <div class="contact-grid">
+          <!-- Contact Form -->
+          <div class="contact-form reveal">
+            <h2 class="section__title">Send us a message</h2>
+            <form aria-label="Contact form">
+              <div class="form-group">
+                <label for="name">Your Name</label>
+                <input type="text" id="name" name="name" required>
+              </div>
+              <div class="form-group">
+                <label for="email">Your Email</label>
+                <input type="email" id="email" name="email" required>
+              </div>
+              <div class="form-group">
+                <label for="subject">Subject</label>
+                <input type="text" id="subject" name="subject" required>
+              </div>
+              <div class="form-group">
+                <label for="message">Your Message</label>
+                <textarea id="message" name="message" rows="6" required></textarea>
+              </div>
+              <button type="submit" class="btn btn--accent btn--large">Send Message</button>
+            </form>
+          </div>
+
+          <!-- Contact Info -->
+          <div class="contact-info reveal">
+            <div class="contact-info__card">
+              <div class="contact-info__item">
+                <div class="contact-info__icon"><i class="fas fa-map-marker-alt"></i></div>
+                <div>
+                  <h4>Our Office</h4>
+                  <p>WeWork, Senna Building<br>Gorsuch Pl, London E2 8JF</p>
+                </div>
+              </div>
+              <div class="contact-info__item">
+                <div class="contact-info__icon"><i class="fas fa-envelope"></i></div>
+                <div>
+                  <h4>Email</h4>
+                  <p><a href="mailto:hello@wearetern.org">hello@wearetern.org</a></p>
+                </div>
+              </div>
+              <div class="contact-info__item">
+                <div class="contact-info__icon"><i class="fas fa-phone"></i></div>
+                <div>
+                  <h4>Phone</h4>
+                  <p><a href="tel:+447490858126">+44 7490 858 126</a></p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Map placeholder -->
+            <div class="contact-map">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2482.1!2d-0.076!3d51.531!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTHCsDMxJzUxLjYiTiAwwrAwNCczMy42Ilc!5e0!3m2!1sen!2suk!4v1"
+                width="100%" height="250" style="border:0; border-radius: var(--radius-lg);" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                title="TERN office location"></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__about">
+          <div class="footer__logo">
+            <svg viewBox="0 0 120 40" fill="currentColor" class="logo-svg">
+              <text x="0" y="32" font-family="Source Sans 3, sans-serif" font-weight="900" font-size="36" letter-spacing="4">TERN</text>
+            </svg>
+          </div>
+          <p>The Entrepreneurial Refugee Network C.I.C. is a social enterprise enabling refugees to thrive through the power of their own ideas.</p>
+          <div class="footer__social">
+            <a href="https://www.instagram.com/we_are_tern/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.linkedin.com/company/wearetern/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://twitter.com/TERNrefugee" target="_blank" rel="noopener" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
+            <a href="https://www.facebook.com/refugeeentrepreneurship/" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.youtube.com/channel/UCGvGBwl0jSw39LJ_MK8fssQ" target="_blank" rel="noopener" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+        <div class="footer__links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#entrepreneurs">For entrepreneurs</a></li>
+            <li><a href="index.html#supporters">For volunteers</a></li>
+            <li><a href="index.html#partners">For partners</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer__newsletter">
+          <h4>Stay Connected</h4>
+          <p>Subscribe to the TERN Newsletter for updates, stories, and opportunities.</p>
+          <form class="footer__form" aria-label="Footer newsletter signup">
+            <input type="email" placeholder="Email address" required aria-label="Email address">
+            <button type="submit" class="btn btn--accent btn--block">Subscribe</button>
+          </form>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>&copy; 2026 The Entrepreneurial Refugee Network C.I.C. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
