@@ -1,5 +1,5 @@
 // ============================
-// TERN Website - Main JS
+// TERN Website - Main JS (UX Redesign)
 // ============================
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -14,7 +14,6 @@ document.addEventListener('DOMContentLoaded', () => {
     burger.setAttribute('aria-expanded', mobileMenu.classList.contains('open'));
   });
 
-  // Close mobile menu on link click
   mobileMenu?.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', () => {
       burger.classList.remove('active');
@@ -25,12 +24,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // --- Header scroll effect ---
   const header = document.getElementById('header');
-  let lastScroll = 0;
-
   window.addEventListener('scroll', () => {
-    const scrollY = window.scrollY;
-    header?.classList.toggle('scrolled', scrollY > 50);
-    lastScroll = scrollY;
+    header?.classList.toggle('scrolled', window.scrollY > 50);
   }, { passive: true });
 
   // --- Hero slideshow ---
@@ -63,13 +58,9 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  if (slides.length > 0) {
-    startSlideshow();
-  }
+  if (slides.length > 0) startSlideshow();
 
   // --- Scroll reveal ---
-  const revealElements = document.querySelectorAll('.reveal');
-
   const revealObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -77,16 +68,12 @@ document.addEventListener('DOMContentLoaded', () => {
         revealObserver.unobserve(entry.target);
       }
     });
-  }, {
-    threshold: 0.15,
-    rootMargin: '0px 0px -50px 0px'
-  });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
 
-  revealElements.forEach(el => revealObserver.observe(el));
+  document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 
   // --- Animated counters ---
-  const counters = document.querySelectorAll('.stat__number');
-
+  const counters = document.querySelectorAll('.stat-card__number, .stat__number');
   const counterObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -102,24 +89,54 @@ document.addEventListener('DOMContentLoaded', () => {
     const target = parseInt(el.dataset.target);
     const prefix = el.dataset.prefix || '';
     const suffix = el.dataset.suffix || '';
-    const duration = 2000;
+    const duration = 2200;
     const startTime = performance.now();
 
     function update(now) {
       const elapsed = now - startTime;
       const progress = Math.min(elapsed / duration, 1);
-      // Ease out cubic
       const eased = 1 - Math.pow(1 - progress, 3);
       const current = Math.round(target * eased);
-
       el.textContent = prefix + current.toLocaleString() + suffix;
-
-      if (progress < 1) {
-        requestAnimationFrame(update);
-      }
+      if (progress < 1) requestAnimationFrame(update);
     }
 
     requestAnimationFrame(update);
+  }
+
+  // --- Stat card expand (Idea 3) ---
+  document.querySelectorAll('.stat-card').forEach(card => {
+    card.addEventListener('click', () => {
+      const isExpanded = card.classList.contains('expanded');
+      // Close all others
+      document.querySelectorAll('.stat-card.expanded').forEach(c => c.classList.remove('expanded'));
+      if (!isExpanded) card.classList.add('expanded');
+    });
+  });
+
+  // --- Floating CTA (Idea 5) ---
+  const floatingCta = document.getElementById('floatingCta');
+  if (floatingCta) {
+    let floatingVisible = false;
+
+    window.addEventListener('scroll', () => {
+      const scrollY = window.scrollY;
+      const viewportHeight = window.innerHeight;
+      const shouldShow = scrollY > viewportHeight * 0.8;
+
+      // Hide when near footer
+      const footer = document.querySelector('.footer');
+      const footerTop = footer ? footer.getBoundingClientRect().top : Infinity;
+      const nearFooter = footerTop < viewportHeight + 100;
+
+      if (shouldShow && !nearFooter && !floatingVisible) {
+        floatingCta.classList.add('visible');
+        floatingVisible = true;
+      } else if ((!shouldShow || nearFooter) && floatingVisible) {
+        floatingCta.classList.remove('visible');
+        floatingVisible = false;
+      }
+    }, { passive: true });
   }
 
   // --- Smooth scroll for anchor links ---
@@ -130,9 +147,40 @@ document.addEventListener('DOMContentLoaded', () => {
       const target = document.querySelector(href);
       if (target) {
         e.preventDefault();
-        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        const headerHeight = document.getElementById('header')?.offsetHeight || 72;
+        const targetTop = target.getBoundingClientRect().top + window.scrollY - headerHeight - 20;
+        window.scrollTo({ top: targetTop, behavior: 'smooth' });
       }
     });
   });
+
+  // --- Parallax on hero (subtle) ---
+  const heroContent = document.querySelector('.hero__content');
+  if (heroContent && window.innerWidth > 768) {
+    window.addEventListener('scroll', () => {
+      const scrollY = window.scrollY;
+      const heroHeight = document.querySelector('.hero')?.offsetHeight || 800;
+      if (scrollY < heroHeight) {
+        const progress = scrollY / heroHeight;
+        heroContent.style.transform = `translateY(${scrollY * 0.15}px)`;
+        heroContent.style.opacity = 1 - progress * 0.6;
+      }
+    }, { passive: true });
+  }
+
+  // --- Timeline step stagger ---
+  const timelineSteps = document.querySelectorAll('.timeline__step');
+  const timelineObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => {
+          entry.target.classList.add('visible');
+        }, i * 150);
+        timelineObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.2 });
+
+  timelineSteps.forEach(step => timelineObserver.observe(step));
 
 });

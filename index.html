@@ -15,7 +15,6 @@
 </head>
 <body>
 
-  <!-- Skip to content -->
   <a href="#main" class="skip-link">Skip to content</a>
 
   <!-- Header -->
@@ -24,7 +23,6 @@
       <a href="/" class="header__logo" aria-label="TERN Home">
         <img src="images/logo-white.svg" alt="TERN" class="logo-svg">
       </a>
-
       <nav class="header__nav" id="mainNav" aria-label="Main navigation">
         <ul class="nav-list">
           <li><a href="#entrepreneurs">Entrepreneurs</a></li>
@@ -34,21 +32,15 @@
           <li><a href="contact.html">Contact us</a></li>
         </ul>
       </nav>
-
       <div class="header__actions">
         <a href="#spark" class="btn btn--small btn--outline">Spark</a>
-        <a href="#advice" class="btn btn--small btn--accent">Get advice</a>
-        <a href="#donate" class="btn btn--small btn--yellow">Donate</a>
+        <a href="contact.html" class="btn btn--small btn--accent">Get advice</a>
+        <a href="#donate" class="btn btn--small btn--yellow donate-pulse">Donate</a>
       </div>
-
       <button class="header__burger" id="burgerBtn" aria-label="Toggle menu" aria-expanded="false">
-        <span></span>
-        <span></span>
-        <span></span>
+        <span></span><span></span><span></span>
       </button>
     </div>
-
-    <!-- Mobile menu -->
     <div class="mobile-menu" id="mobileMenu">
       <ul class="mobile-menu__list">
         <li><a href="#entrepreneurs">Entrepreneurs</a></li>
@@ -59,7 +51,7 @@
       </ul>
       <div class="mobile-menu__actions">
         <a href="#spark" class="btn btn--accent btn--block">Spark</a>
-        <a href="#advice" class="btn btn--accent btn--block">Get advice</a>
+        <a href="contact.html" class="btn btn--accent btn--block">Get advice</a>
         <a href="#donate" class="btn btn--yellow btn--block">Donate</a>
       </div>
     </div>
@@ -67,7 +59,9 @@
 
   <main id="main">
 
-    <!-- Hero Section -->
+    <!-- ============================================
+         IDEA 1: Hero with audience path selector
+         ============================================ -->
     <section class="hero" id="hero">
       <div class="hero__slides">
         <div class="hero__slide active" data-slide="0">
@@ -81,11 +75,41 @@
         </div>
       </div>
       <div class="hero__overlay"></div>
+
       <div class="hero__content container">
-        <h1 class="hero__title fade-up">Are you a refugee looking for business support in the UK?</h1>
-        <p class="hero__text fade-up delay-1">Welcome to The Entrepreneurial Refugee Network (TERN). We help refugees become entrepreneurs, launch businesses and take control of their own futures, and have supported over 750 founders since 2016.</p>
-        <a href="#entrepreneurs" class="btn btn--accent btn--large fade-up delay-2">Get Support</a>
+        <p class="hero__eyebrow fade-up">The Entrepreneurial Refugee Network</p>
+        <h1 class="hero__title fade-up delay-1">Enabling refugees to thrive through the power of their own ideas</h1>
+        <p class="hero__text fade-up delay-2">750+ founders supported since 2016. Which path is yours?</p>
+
+        <!-- Audience path selector -->
+        <div class="hero__paths fade-up delay-2">
+          <a href="#entrepreneurs" class="hero-path">
+            <div class="hero-path__icon"><i class="fas fa-rocket"></i></div>
+            <div class="hero-path__content">
+              <strong>I'm a refugee</strong>
+              <span>Get business support</span>
+            </div>
+            <i class="fas fa-arrow-right hero-path__arrow"></i>
+          </a>
+          <a href="#supporters" class="hero-path">
+            <div class="hero-path__icon"><i class="fas fa-hand-holding-heart"></i></div>
+            <div class="hero-path__content">
+              <strong>I want to help</strong>
+              <span>Volunteer or donate</span>
+            </div>
+            <i class="fas fa-arrow-right hero-path__arrow"></i>
+          </a>
+          <a href="#partners" class="hero-path">
+            <div class="hero-path__icon"><i class="fas fa-building"></i></div>
+            <div class="hero-path__content">
+              <strong>I'm an organisation</strong>
+              <span>Partner with us</span>
+            </div>
+            <i class="fas fa-arrow-right hero-path__arrow"></i>
+          </a>
+        </div>
       </div>
+
       <div class="hero__social">
         <a href="https://www.linkedin.com/company/wearetern/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
         <a href="https://www.instagram.com/we_are_tern/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
@@ -95,118 +119,251 @@
         <button class="hero__dot" data-slide="1" aria-label="Slide 2"></button>
         <button class="hero__dot" data-slide="2" aria-label="Slide 3"></button>
       </div>
+      <div class="hero__scroll-hint">
+        <span>Scroll</span>
+        <div class="hero__scroll-line"></div>
+      </div>
     </section>
 
-    <!-- Get Involved Cards -->
-    <section class="involved section" id="supporters">
+    <!-- ============================================
+         IDEA 2: Entrepreneur journey timeline
+         ============================================ -->
+    <section class="journey section" id="entrepreneurs">
       <div class="container">
-        <h2 class="section__title reveal">Get Involved</h2>
-        <div class="card-grid">
-          <article class="card reveal">
-            <div class="card__icon">
-              <i class="fas fa-hands-helping"></i>
+        <div class="section-header reveal">
+          <span class="badge">For Entrepreneurs</span>
+          <h2 class="section__title">Your journey with TERN</h2>
+          <p class="section__desc">From first idea to thriving business &mdash; we're with you every step.</p>
+        </div>
+
+        <div class="timeline">
+          <div class="timeline__line"></div>
+
+          <div class="timeline__step reveal" data-step="1">
+            <div class="timeline__marker">
+              <span>1</span>
             </div>
-            <h3 class="card__title">Volunteer with TERN</h3>
-            <p class="card__text">We connect industry professionals with refugee entrepreneurs seeking advice and support.</p>
-            <a href="#supporters" class="card__link">Learn more <i class="fas fa-arrow-right"></i></a>
-          </article>
-          <article class="card reveal" id="partners">
-            <div class="card__icon">
-              <i class="fas fa-handshake"></i>
+            <div class="timeline__card">
+              <div class="timeline__icon"><i class="fas fa-lightbulb"></i></div>
+              <h3>Explore your idea</h3>
+              <p>Join our Spark programme to test and develop your business concept in a supportive environment.</p>
             </div>
-            <h3 class="card__title">Partner with TERN</h3>
-            <p class="card__text">Develop your organisation's support for refugee entrepreneurs, or collaborate on one of our programmes.</p>
-            <a href="#partners" class="card__link">Learn more <i class="fas fa-arrow-right"></i></a>
-          </article>
-          <article class="card reveal">
-            <div class="card__icon">
-              <i class="fas fa-calendar-alt"></i>
+          </div>
+
+          <div class="timeline__step reveal" data-step="2">
+            <div class="timeline__marker">
+              <span>2</span>
             </div>
-            <h3 class="card__title">Join TERN events</h3>
-            <p class="card__text">Support refugee entrepreneurs at one of our in-person events &mdash; hosted year-round across London.</p>
-            <a href="#events" class="card__link">Learn more <i class="fas fa-arrow-right"></i></a>
-          </article>
+            <div class="timeline__card">
+              <div class="timeline__icon"><i class="fas fa-users"></i></div>
+              <h3>Get mentored</h3>
+              <p>Connect one-to-one with industry professionals who guide you through challenges and opportunities.</p>
+            </div>
+          </div>
+
+          <div class="timeline__step reveal" data-step="3">
+            <div class="timeline__marker">
+              <span>3</span>
+            </div>
+            <div class="timeline__card">
+              <div class="timeline__icon"><i class="fas fa-chart-line"></i></div>
+              <h3>Build &amp; launch</h3>
+              <p>Access workshops, funding opportunities, and practical tools to turn your plan into reality.</p>
+            </div>
+          </div>
+
+          <div class="timeline__step reveal" data-step="4">
+            <div class="timeline__marker">
+              <span>4</span>
+            </div>
+            <div class="timeline__card">
+              <div class="timeline__icon"><i class="fas fa-trophy"></i></div>
+              <h3>Grow &amp; thrive</h3>
+              <p>Join our community of 500+ entrepreneurs. Get ongoing support, events, and peer connections.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-center reveal" style="margin-top: 3rem;">
+          <a href="#spark" class="btn btn--accent btn--large">Start your journey <i class="fas fa-arrow-right"></i></a>
         </div>
       </div>
     </section>
 
-    <!-- Impact Stats -->
+    <!-- ============================================
+         IDEA 3: Impact with expandable stories
+         ============================================ -->
     <section class="impact section" id="impact">
       <div class="container">
-        <h2 class="section__title section__title--light reveal">Our Impact So Far</h2>
+        <div class="section-header reveal">
+          <h2 class="section__title section__title--light">Our Impact So Far</h2>
+          <p class="section__desc section__desc--light">Click any number to discover the stories behind it.</p>
+        </div>
+
         <div class="stats-grid">
-          <div class="stat reveal">
-            <span class="stat__number" data-target="872">0</span>
-            <span class="stat__label">Entrepreneurs supported</span>
+          <div class="stat-card reveal" data-story="entrepreneurs">
+            <span class="stat-card__number" data-target="872">0</span>
+            <span class="stat-card__label">Entrepreneurs supported</span>
+            <div class="stat-card__story">
+              <p>"TERN gave me the confidence to believe my idea could work. Now I employ three people." &mdash; Nejat, founder</p>
+            </div>
+            <button class="stat-card__toggle" aria-label="Show story"><i class="fas fa-plus"></i></button>
           </div>
-          <div class="stat reveal">
-            <span class="stat__number" data-target="160">0</span>
-            <span class="stat__label">Businesses started</span>
+
+          <div class="stat-card reveal" data-story="businesses">
+            <span class="stat-card__number" data-target="160">0</span>
+            <span class="stat-card__label">Businesses started</span>
+            <div class="stat-card__story">
+              <p>From catering to tech, fashion to consultancy &mdash; our founders build businesses across every sector.</p>
+            </div>
+            <button class="stat-card__toggle" aria-label="Show story"><i class="fas fa-plus"></i></button>
           </div>
-          <div class="stat reveal">
-            <span class="stat__number" data-target="11">0</span>
-            <span class="stat__label">Cities reached</span>
+
+          <div class="stat-card reveal" data-story="cities">
+            <span class="stat-card__number" data-target="11">0</span>
+            <span class="stat-card__label">Cities reached</span>
+            <div class="stat-card__story">
+              <p>London, Manchester, Birmingham, Bristol, Leeds, and growing &mdash; bringing support closer to refugees across the UK.</p>
+            </div>
+            <button class="stat-card__toggle" aria-label="Show story"><i class="fas fa-plus"></i></button>
           </div>
-          <div class="stat reveal">
-            <span class="stat__number" data-prefix="£" data-target="995" data-suffix="K">0</span>
-            <span class="stat__label">Finance facilitated</span>
+
+          <div class="stat-card reveal" data-story="finance">
+            <span class="stat-card__number" data-prefix="&pound;" data-target="995" data-suffix="K">0</span>
+            <span class="stat-card__label">Finance facilitated</span>
+            <div class="stat-card__story">
+              <p>Grants, loans, and investment &mdash; connecting entrepreneurs with the capital they need to start and scale.</p>
+            </div>
+            <button class="stat-card__toggle" aria-label="Show story"><i class="fas fa-plus"></i></button>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- News Marquee -->
-    <section class="news-marquee section--compact">
+    <!-- ============================================
+         IDEA 4: Social proof with real quotes
+         ============================================ -->
+    <section class="press section--compact">
       <div class="container">
-        <h2 class="section__subtitle reveal">TERN in the News</h2>
-      </div>
-      <div class="marquee">
-        <div class="marquee__track">
-          <a href="https://www.creativeboom.com/news/photographs-of-immigrants-turned-entrepreneurs-in-london/" target="_blank" rel="noopener"><img class="marquee__logo" src="images/creative-boom.webp" alt="Creative Boom"></a>
-          <a href="https://www.theguardian.com/lifeandstyle/2022/oct/03/i-spent-a-year-meeting-people-who-make-a-difference-heres-what-they-taught-me" target="_blank" rel="noopener"><img class="marquee__logo" src="images/guardian.webp" alt="The Guardian"></a>
-          <a href="https://www.virgin.com/branson-family/richard-branson-blog/supporting-refugees-2024" target="_blank" rel="noopener"><img class="marquee__logo" src="images/virgin.webp" alt="Virgin"></a>
-          <a href="https://www.bbc.co.uk/news/articles/cn00ee6d64no" target="_blank" rel="noopener"><img class="marquee__logo" src="images/bbc.webp" alt="BBC News"></a>
-          <a href="https://www.dailymail.co.uk/femail/article-12198085/Ben-Jerrys-drops-new-flavour-created-refugee-entrepreneurs.html" target="_blank" rel="noopener"><img class="marquee__logo" src="images/daily-mail.webp" alt="Daily Mail"></a>
-          <img class="marquee__logo" src="images/positive-news.webp" alt="Positive News">
-          <a href="https://www.creativeboom.com/news/photographs-of-immigrants-turned-entrepreneurs-in-london/" target="_blank" rel="noopener"><img class="marquee__logo" src="images/creative-boom.webp" alt="Creative Boom"></a>
-          <a href="https://www.theguardian.com/lifeandstyle/2022/oct/03/i-spent-a-year-meeting-people-who-make-a-difference-heres-what-they-taught-me" target="_blank" rel="noopener"><img class="marquee__logo" src="images/guardian.webp" alt="The Guardian"></a>
-          <a href="https://www.virgin.com/branson-family/richard-branson-blog/supporting-refugees-2024" target="_blank" rel="noopener"><img class="marquee__logo" src="images/virgin.webp" alt="Virgin"></a>
-          <a href="https://www.bbc.co.uk/news/articles/cn00ee6d64no" target="_blank" rel="noopener"><img class="marquee__logo" src="images/bbc.webp" alt="BBC News"></a>
-          <a href="https://www.dailymail.co.uk/femail/article-12198085/Ben-Jerrys-drops-new-flavour-created-refugee-entrepreneurs.html" target="_blank" rel="noopener"><img class="marquee__logo" src="images/daily-mail.webp" alt="Daily Mail"></a>
-          <img class="marquee__logo" src="images/positive-news.webp" alt="Positive News">
+        <div class="press__featured reveal">
+          <blockquote class="press__quote">
+            <p>"I spent a year meeting people who make a difference &mdash; here's what they taught me"</p>
+            <cite>
+              <img src="images/guardian.webp" alt="The Guardian" class="press__cite-logo">
+              <span>The Guardian</span>
+            </cite>
+          </blockquote>
+        </div>
+        <div class="press__logos reveal">
+          <span class="press__label">As featured in</span>
+          <div class="press__logo-row">
+            <a href="https://www.bbc.co.uk/news/articles/cn00ee6d64no" target="_blank" rel="noopener"><img src="images/bbc.webp" alt="BBC News"></a>
+            <a href="https://www.theguardian.com/lifeandstyle/2022/oct/03/i-spent-a-year-meeting-people-who-make-a-difference-heres-what-they-taught-me" target="_blank" rel="noopener"><img src="images/guardian.webp" alt="The Guardian"></a>
+            <a href="https://www.virgin.com/branson-family/richard-branson-blog/supporting-refugees-2024" target="_blank" rel="noopener"><img src="images/virgin.webp" alt="Virgin"></a>
+            <a href="https://www.creativeboom.com/news/photographs-of-immigrants-turned-entrepreneurs-in-london/" target="_blank" rel="noopener"><img src="images/creative-boom.webp" alt="Creative Boom"></a>
+            <a href="https://www.dailymail.co.uk/femail/article-12198085/Ben-Jerrys-drops-new-flavour-created-refugee-entrepreneurs.html" target="_blank" rel="noopener"><img src="images/daily-mail.webp" alt="Daily Mail"></a>
+            <img src="images/positive-news.webp" alt="Positive News">
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- Entrepreneurs Section -->
-    <section class="entrepreneurs section" id="entrepreneurs">
+    <!-- ============================================
+         Get Involved (Supporters & Partners)
+         ============================================ -->
+    <section class="involved section" id="supporters">
       <div class="container">
-        <div class="split">
-          <div class="split__media reveal">
-            <img src="images/volunteer.webp" alt="TERN volunteers and entrepreneurs" loading="lazy">
+        <div class="section-header reveal">
+          <h2 class="section__title">How you can help</h2>
+          <p class="section__desc">Every refugee entrepreneur's success story has supporters behind it.</p>
+        </div>
+
+        <div class="involve-grid">
+          <article class="involve-card reveal" id="partners">
+            <div class="involve-card__image">
+              <img src="images/volunteer.webp" alt="Volunteers mentoring entrepreneurs" loading="lazy">
+            </div>
+            <div class="involve-card__content">
+              <span class="badge">Volunteers</span>
+              <h3>Share your expertise</h3>
+              <p>We connect industry professionals with refugee entrepreneurs seeking advice. Your experience could be the difference between an idea and a business.</p>
+              <ul class="involve-card__perks">
+                <li><i class="fas fa-check"></i> Flexible time commitment</li>
+                <li><i class="fas fa-check"></i> Training provided</li>
+                <li><i class="fas fa-check"></i> Meaningful impact</li>
+              </ul>
+              <a href="contact.html" class="btn btn--accent">Become a volunteer</a>
+            </div>
+          </article>
+
+          <article class="involve-card involve-card--reverse reveal">
+            <div class="involve-card__image">
+              <img src="images/partner.webp" alt="TERN partner organisations" loading="lazy">
+            </div>
+            <div class="involve-card__content">
+              <span class="badge">Partners</span>
+              <h3>Collaborate with us</h3>
+              <p>Develop your organisation's support for refugee entrepreneurs, sponsor a programme, or co-create new initiatives with our team.</p>
+              <ul class="involve-card__perks">
+                <li><i class="fas fa-check"></i> CSR &amp; ESG alignment</li>
+                <li><i class="fas fa-check"></i> Bespoke programmes</li>
+                <li><i class="fas fa-check"></i> Measurable outcomes</li>
+              </ul>
+              <a href="contact.html" class="btn btn--accent">Partner with TERN</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================
+         IDEA: Spark programme highlight
+         ============================================ -->
+    <section class="spark-section section" id="spark">
+      <div class="container">
+        <div class="spark-hero reveal">
+          <div class="spark-hero__media">
+            <img src="images/food-power.jpg" alt="TERN Spark programme in action" loading="lazy">
+            <div class="spark-hero__badge">
+              <span class="spark-hero__badge-text">Applications open</span>
+            </div>
           </div>
-          <div class="split__content reveal">
-            <h2 class="section__title">For Entrepreneurs</h2>
-            <p>Whether you're just starting out or looking to grow your business, TERN provides the resources, mentorship, and community you need to succeed.</p>
-            <ul class="check-list">
-              <li>One-to-one business mentoring</li>
-              <li>Structured programmes and workshops</li>
-              <li>Access to funding and finance</li>
-              <li>A community of fellow entrepreneurs</li>
-            </ul>
-            <a href="#" class="btn btn--accent">Explore our programmes</a>
+          <div class="spark-hero__content">
+            <span class="badge">Flagship Programme</span>
+            <h2 class="section__title">Spark</h2>
+            <p class="spark-hero__desc">Our pre-incubation programme designed to help refugees explore and develop their business ideas. 8 weeks of structured support, mentoring, and community.</p>
+            <div class="spark-hero__features">
+              <div class="spark-feature">
+                <i class="fas fa-calendar"></i>
+                <span>8-week programme</span>
+              </div>
+              <div class="spark-feature">
+                <i class="fas fa-user-friends"></i>
+                <span>1-to-1 mentoring</span>
+              </div>
+              <div class="spark-feature">
+                <i class="fas fa-pound-sign"></i>
+                <span>Free to join</span>
+              </div>
+            </div>
+            <a href="contact.html" class="btn btn--accent btn--large">Apply now <i class="fas fa-arrow-right"></i></a>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Newsletter CTA -->
+    <!-- ============================================
+         IDEA 8: Newsletter with concrete value
+         ============================================ -->
     <section class="newsletter section">
       <div class="container">
         <div class="newsletter__inner reveal">
+          <div class="newsletter__icon">
+            <i class="fas fa-paper-plane"></i>
+          </div>
           <div class="newsletter__content">
-            <h2>Be the first to hear news from our community!</h2>
-            <p>Stay updated with stories, events, and opportunities from the TERN network.</p>
+            <h2>Get our monthly digest</h2>
+            <p>3 funding opportunities + 1 success story + upcoming events. No spam, unsubscribe anytime.</p>
           </div>
           <form class="newsletter__form" aria-label="Newsletter signup">
             <input type="email" placeholder="Your email address" required aria-label="Email address">
@@ -216,24 +373,17 @@
       </div>
     </section>
 
-    <!-- Spark Section -->
-    <section class="spark section" id="spark">
-      <div class="container">
-        <div class="split split--reverse">
-          <div class="split__media reveal">
-            <img src="images/food-power.jpg" alt="TERN Spark programme" loading="lazy">
-          </div>
-          <div class="split__content reveal">
-            <span class="badge">Programme</span>
-            <h2 class="section__title">Spark</h2>
-            <p>Our flagship pre-incubation programme designed to help refugees explore and develop their business ideas in a supportive, structured environment.</p>
-            <a href="#" class="btn btn--accent">Apply now</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
   </main>
+
+  <!-- ============================================
+       IDEA 5: Sticky floating CTA
+       ============================================ -->
+  <div class="floating-cta" id="floatingCta">
+    <div class="floating-cta__inner">
+      <span class="floating-cta__text">Need business support?</span>
+      <a href="contact.html" class="btn btn--accent btn--small">Talk to us</a>
+    </div>
+  </div>
 
   <!-- Footer -->
   <footer class="footer">
@@ -241,9 +391,7 @@
       <div class="footer__grid">
         <div class="footer__about">
           <div class="footer__logo">
-            <svg viewBox="0 0 120 40" fill="currentColor" class="logo-svg">
-              <text x="0" y="32" font-family="Source Sans 3, sans-serif" font-weight="900" font-size="36" letter-spacing="4">TERN</text>
-            </svg>
+            <img src="images/logo-white.svg" alt="TERN" class="logo-svg">
           </div>
           <p>The Entrepreneurial Refugee Network C.I.C. is a social enterprise enabling refugees to thrive through the power of their own ideas.</p>
           <div class="footer__social">
@@ -261,7 +409,6 @@
             <li><a href="#entrepreneurs">For entrepreneurs</a></li>
             <li><a href="#supporters">For volunteers</a></li>
             <li><a href="#partners">For partners</a></li>
-            <li><a href="#events">TERN Events</a></li>
             <li><a href="contact.html">Contact</a></li>
             <li><a href="terms.html">Terms & Conditions</a></li>
             <li><a href="privacy.html">Privacy notice</a></li>

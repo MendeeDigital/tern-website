@@ -66,8 +66,35 @@
       </div>
     </section>
 
+    <!-- Idea 6: Audience-aware contact intro -->
+    <section class="section" style="background: var(--light-bg);">
+      <div class="container">
+        <div class="section-header reveal">
+          <h2 class="section__title">What brings you here?</h2>
+          <p class="section__desc">Choose your path so we can help you faster.</p>
+        </div>
+        <div class="card-grid" style="max-width: 900px; margin: 0 auto;">
+          <a href="#contact-form" class="card reveal" onclick="document.getElementById('subject').value='Entrepreneur enquiry'">
+            <div class="card__icon"><i class="fas fa-rocket"></i></div>
+            <h3 class="card__title">I'm an entrepreneur</h3>
+            <p class="card__text">I need business support or want to join a programme.</p>
+          </a>
+          <a href="#contact-form" class="card reveal" onclick="document.getElementById('subject').value='Volunteer enquiry'">
+            <div class="card__icon"><i class="fas fa-hand-holding-heart"></i></div>
+            <h3 class="card__title">I want to volunteer</h3>
+            <p class="card__text">I'd like to share my skills and mentor someone.</p>
+          </a>
+          <a href="#contact-form" class="card reveal" onclick="document.getElementById('subject').value='Partnership enquiry'">
+            <div class="card__icon"><i class="fas fa-building"></i></div>
+            <h3 class="card__title">I represent an organisation</h3>
+            <p class="card__text">I want to explore a partnership or sponsorship.</p>
+          </a>
+        </div>
+      </div>
+    </section>
+
     <!-- Contact Section -->
-    <section class="section">
+    <section class="section" id="contact-form">
       <div class="container">
         <div class="contact-grid">
           <!-- Contact Form -->
@@ -84,7 +111,7 @@
               </div>
               <div class="form-group">
                 <label for="subject">Subject</label>
-                <input type="text" id="subject" name="subject" required>
+                <input type="text" id="subject" name="subject" required placeholder="What is this about?">
               </div>
               <div class="form-group">
                 <label for="message">Your Message</label>
